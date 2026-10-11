@@ -1,0 +1,17 @@
+Number 1 objective: connect a phone (iPhone) via Bluetooth (maybe also via USB) and play music.
+    profiles to investigate for Bluetooth connection: A2DP and AVRCP.
+    Bluez might be interesting.
+    Communicate with Bluez using D-BUS, possible in C via GDbus (from glib).
+    Bluez only handles discovering, connecting and pairing.
+    Pipewire seems to handle the Audio part.
+    -- Need to register a specific endpoint to Bluez for A2DP Sink. -- Actually nevermind, Pipewire registers its own endpoints
+    A Pipewire session manager is needed though -> Wireplumber, this takes care of connections and stream so THIS must be configured for Audio Sink
+
+
+Secondary objectives:
+
+- A debugging interface
+- Display informations about the phone (battery, etc...).
+- Somehow connect the SBC to the internet.
+- Control the music app using the SBC (skip music, pause, lower/increase volume, shuffle).
+- Taking phone calls: HFP (Bluetooth profile)

@@ -1,0 +1,553 @@
+[NEW] Media /org/bluez/hci0 
+	SupportedUUIDs: 0000110a-0000-1000-8000-00805f9b34fb
+	SupportedUUIDs: 0000110b-0000-1000-8000-00805f9b34fb
+Agent registered
+[CHG] Controller 44:1C:A8:61:57:CE Pairable: yes
+hci0 new_settings: powered connectable discoverable bondable ssp br/edr le secure-conn 
+[bluetoothctl]> help
+Menu main:
+Available commands:
+-------------------
+advertise                                         Advertise Options Submenu
+monitor                                           Advertisement Monitor Options Submenu
+scan                                              Scan Options Submenu
+gatt                                              Generic Attribute Submenu
+le                                                LE Bearer Submenu
+bredr                                             BREDR Bearer Submenu
+admin                                             Admin Policy Submenu
+player                                            Media Player Submenu
+endpoint                                          Media Endpoint Submenu
+transport                                         Media Transport Submenu
+mgmt                                              Management Submenu
+monitor                                           Advertisement Monitor Submenu
+assistant                                         Media Assistant Submenu
+hci                                               HCI Submenu
+telephony                                         Telephony Submenu
+list                                              List available controllers
+show [ctrl]                                       Controller information
+select <ctrl>                                     Select default controller
+devices [Paired/Bonded/Trusted/Connected]         List available devices, with an optional property as the filter
+system-alias <name>                               Set controller alias
+reset-alias                                       Reset controller alias
+power <on/off>                                    Set controller power
+pairable <on/off>                                 Set controller pairable mode
+discoverable <on/off>                             Set controller discoverable mode
+discoverable-timeout [value]                      Set discoverable timeout
+agent <on/off/auto/capability>                    Enable/disable agent with given capability
+default-agent                                     Set agent as the default one
+advertise <on/off/type>                           Enable/disable advertising with given type
+set-alias <alias>                                 Set device alias
+scan <on/off/bredr/le>                            Scan for devices
+info [dev/set]                                    Device/Set information
+pair [dev]                                        Pair with device
+cancel-pairing [dev]                              Cancel pairing with device
+trust [dev]                                       Trust device
+untrust [dev]                                     Untrust device
+block [dev]                                       Block device
+unblock [dev]                                     Unblock device
+remove <dev>                                      Remove device
+connect <dev> [uuid]                              Connect a device and all its profiles or optionally connect a single profile only
+disconnect [dev] [uuid]                           Disconnect a device or optionally disconnect a single profile only
+wake [dev] [on/off]                               Get/Set wake support
+bearer <dev> [last-seen/bredr/le]                 Get/Set preferred bearer
+menu <name>                                       Select submenu
+version                                           Display version
+quit                                              Quit program
+exit                                              Quit program
+help                                              Display help about this program
+export                                            Print environment variables
+script <filename>                                 Run script
+[bluetoothctl]> show
+Controller 44:1C:A8:61:57:CE (public)
+	Manufacturer: 0x005d (93)
+	Version: 0x06 (6)
+	Name: pcdemerde
+	Alias: pcdemerde
+	Class: 0x006c010c (7078156)
+	Powered: yes
+	PowerState: on
+	Discoverable: yes
+	DiscoverableTimeout: 0x000000b4 (180)
+	Pairable: yes
+	UUID: A/V Remote Control        (0000110e-0000-1000-8000-00805f9b34fb)
+	UUID: Handsfree Audio Gateway   (0000111f-0000-1000-8000-00805f9b34fb)
+	UUID: PnP Information           (00001200-0000-1000-8000-00805f9b34fb)
+	UUID: Audio Sink                (0000110b-0000-1000-8000-00805f9b34fb)
+	UUID: Audio Source              (0000110a-0000-1000-8000-00805f9b34fb)
+	UUID: A/V Remote Control Target (0000110c-0000-1000-8000-00805f9b34fb)
+	UUID: Generic Access Profile    (00001800-0000-1000-8000-00805f9b34fb)
+	UUID: Generic Attribute Profile (00001801-0000-1000-8000-00805f9b34fb)
+	UUID: Device Information        (0000180a-0000-1000-8000-00805f9b34fb)
+	UUID: Vendor specific           (03b80e5a-ede8-4b33-a751-6ce34ec4c700)
+	UUID: Handsfree                 (0000111e-0000-1000-8000-00805f9b34fb)
+	Modalias: usb:v1D6Bp0246d0557
+	Discovering: no
+	Roles: central
+	Roles: peripheral
+Advertising Features:
+	ActiveInstances: 0x00 (0)
+	SupportedInstances: 0x05 (5)
+	SupportedIncludes: tx-power
+	SupportedIncludes: appearance
+	SupportedIncludes: local-name
+	SupportedCapabilities.MaxAdvLen: 0x1f (31)
+	SupportedCapabilities.MaxScnRspLen: 0x1f (31)
+[bluetoothctl]> discoverable on
+Changing discoverable on succeeded
+[bluetoothctl]> agent NoInputOutput
+Invalid argument NoInputOutput
+[bluetoothctl]> agent NoInputNoOutput
+Agent is already registered
+[bluetoothctl]> default-agent
+Default agent request successful
+hci0 new_settings: powered connectable bondable ssp br/edr le secure-conn 
+[CHG] Controller 44:1C:A8:61:57:CE Discoverable: no
+[bluetoothctl]> discoverable on
+hci0 new_settings: powered connectable bondable ssp br/edr le secure-conn 
+hci0 new_settings: powered connectable discoverable bondable ssp br/edr le secure-conn 
+Changing discoverable on succeeded
+[CHG] Controller 44:1C:A8:61:57:CE Discoverable: yes
+[NEW] Device 90:81:58:9D:84:E0 Unice-HotSpot2
+Request confirmation
+[agent] Confirm passkey 104167 (yes/no): yes
+[CHG] Device 90:81:58:9D:84:E0 Bonded: yes
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110c-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110e-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110c-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110e-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000111f-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 Modalias: bluetooth:v004Cp740Fd1A60
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00000000-deca-fade-deca-deafdecacafe
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001000-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110a-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110c-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110e-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001116-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000111f-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000112f-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001132-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001200-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001801-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 02030302-1d19-415f-86f2-22a2106a0a77
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 1ff31936-572e-4b36-a2bf-b2409b1aa6f4
+[CHG] Device 90:81:58:9D:84:E0 ServicesResolved: yes
+[CHG] Device 90:81:58:9D:84:E0 Paired: yes
+Authorize service
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00000000-deca-fade-deca-deafdecacafe
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001000-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110a-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110c-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110e-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001116-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000111f-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000112f-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001132-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001200-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001800-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001801-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001805-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000180a-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000180f-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 02030302-1d19-415f-86f2-22a2106a0a77
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 1ff31936-572e-4b36-a2bf-b2409b1aa6f4
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 7905f431-b5ce-4e99-a40f-4b1e122d00d0
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 89d3502b-0f36-433a-8ef4-c502ad55f8dc
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 9fa480e0-4967-4542-9390-d343dc5d04ae
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: d0611e78-bbb4-4591-a5f8-487910ae4366
+[NEW] Primary Service (Handle 0x0001)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0001
+	00001800-0000-1000-8000-00805f9b34fb
+	Generic Access Profile
+[NEW] Characteristic (Handle 0x0002)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0001/char0002
+	00002a00-0000-1000-8000-00805f9b34fb
+	Device Name
+[NEW] Characteristic (Handle 0x0004)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0001/char0004
+	00002a01-0000-1000-8000-00805f9b34fb
+	Appearance
+[NEW] Primary Service (Handle 0x0006)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0006
+	00001801-0000-1000-8000-00805f9b34fb
+	Generic Attribute Profile
+[NEW] Characteristic (Handle 0x0007)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0006/char0007
+	00002a05-0000-1000-8000-00805f9b34fb
+	Service Changed
+[NEW] Descriptor (Handle 0x0009)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0006/char0007/desc0009
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x000a)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service000a
+	0000180a-0000-1000-8000-00805f9b34fb
+	Device Information
+[NEW] Characteristic (Handle 0x000b)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service000a/char000b
+	00002a29-0000-1000-8000-00805f9b34fb
+	Manufacturer Name String
+[NEW] Characteristic (Handle 0x000d)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service000a/char000d
+	00002a24-0000-1000-8000-00805f9b34fb
+	Model Number String
+[NEW] Primary Service (Handle 0x000f)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service000f
+	d0611e78-bbb4-4591-a5f8-487910ae4366
+	Vendor specific
+[NEW] Characteristic (Handle 0x0010)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service000f/char0010
+	8667556c-9a37-4c91-84ed-54ee27d90049
+	Vendor specific
+[NEW] Descriptor (Handle 0x0012)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service000f/char0010/desc0012
+	00002900-0000-1000-8000-00805f9b34fb
+	Characteristic Extended Properties
+[NEW] Descriptor (Handle 0x0013)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service000f/char0010/desc0013
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x0014)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0014
+	9fa480e0-4967-4542-9390-d343dc5d04ae
+	Vendor specific
+[NEW] Characteristic (Handle 0x0015)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0014/char0015
+	af0badb1-5b99-43cd-917a-a77bc549e3cc
+	Vendor specific
+[NEW] Descriptor (Handle 0x0017)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0014/char0015/desc0017
+	00002900-0000-1000-8000-00805f9b34fb
+	Characteristic Extended Properties
+[NEW] Descriptor (Handle 0x0018)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0014/char0015/desc0018
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x0019)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0019
+	0000180f-0000-1000-8000-00805f9b34fb
+	Battery Service
+[NEW] Characteristic (Handle 0x001a)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0019/char001a
+	00002a19-0000-1000-8000-00805f9b34fb
+	Battery Level
+[NEW] Descriptor (Handle 0x001c)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0019/char001a/desc001c
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x001d)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service001d
+	00001805-0000-1000-8000-00805f9b34fb
+	Current Time Service
+[NEW] Characteristic (Handle 0x001e)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service001d/char001e
+	00002a2b-0000-1000-8000-00805f9b34fb
+	Current Time
+[NEW] Descriptor (Handle 0x0020)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service001d/char001e/desc0020
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0021)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service001d/char0021
+	00002a0f-0000-1000-8000-00805f9b34fb
+	Local Time Information
+[NEW] Primary Service (Handle 0x0023)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0023
+	7905f431-b5ce-4e99-a40f-4b1e122d00d0
+	Vendor specific
+[NEW] Characteristic (Handle 0x0024)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0023/char0024
+	69d1d8f3-45e1-49a8-9821-9bbdfdaad9d9
+	Vendor specific
+[NEW] Descriptor (Handle 0x0026)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0023/char0024/desc0026
+	00002900-0000-1000-8000-00805f9b34fb
+	Characteristic Extended Properties
+[NEW] Characteristic (Handle 0x0027)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0023/char0027
+	9fbf120d-6301-42d9-8c58-25e699a21dbd
+	Vendor specific
+[NEW] Descriptor (Handle 0x0029)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0023/char0027/desc0029
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x002a)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0023/char002a
+	22eac6e9-24d6-4bb5-be44-b36ace7c7bfb
+	Vendor specific
+[NEW] Descriptor (Handle 0x002c)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service0023/char002a/desc002c
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x002d)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service002d
+	89d3502b-0f36-433a-8ef4-c502ad55f8dc
+	Vendor specific
+[NEW] Characteristic (Handle 0x002e)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service002d/char002e
+	9b3c81d8-57b1-4a8a-b8df-0e56f7ca51c2
+	Vendor specific
+[NEW] Descriptor (Handle 0x0030)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service002d/char002e/desc0030
+	00002900-0000-1000-8000-00805f9b34fb
+	Characteristic Extended Properties
+[NEW] Descriptor (Handle 0x0031)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service002d/char002e/desc0031
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0032)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service002d/char0032
+	2f7cabce-808d-411f-9a0c-bb92ba96c102
+	Vendor specific
+[NEW] Descriptor (Handle 0x0034)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service002d/char0032/desc0034
+	00002900-0000-1000-8000-00805f9b34fb
+	Characteristic Extended Properties
+[NEW] Descriptor (Handle 0x0035)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service002d/char0032/desc0035
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0036)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service002d/char0036
+	c6b2f38c-23ab-46d8-a6ab-a3a870bbd5d7
+	Vendor specific
+[NEW] Descriptor (Handle 0x0038)
+	/org/bluez/hci0/dev_90_81_58_9D_84_E0/service002d/char0036/desc0038
+	00002900-0000-1000-8000-00805f9b34fb
+	Characteristic Extended Properties
+[CHG] Device 90:81:58:9D:84:E0 Icon: phone
+[CHG] Device 90:81:58:9D:84:E0 Appearance is nil
+[agent] Authorize service 0000110d-0000-1000-8000-00805f9b34fb (yes/no): yes
+Authorize service
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00000000-deca-fade-deca-deafdecacafe
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001000-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110a-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110c-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110d-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000110e-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001116-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000111f-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000112f-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001132-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001200-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001800-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001801-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 00001805-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000180a-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 0000180f-0000-1000-8000-00805f9b34fb
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 02030302-1d19-415f-86f2-22a2106a0a77
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 1ff31936-572e-4b36-a2bf-b2409b1aa6f4
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 7905f431-b5ce-4e99-a40f-4b1e122d00d0
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 89d3502b-0f36-433a-8ef4-c502ad55f8dc
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: 9fa480e0-4967-4542-9390-d343dc5d04ae
+[CHG] Device 90:81:58:9D:84:E0 UUIDs: d0611e78-bbb4-4591-a5f8-487910ae4366
+[NEW] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 
+[agent] Authorize service 0000110e-0000-1000-8000-00805f9b34fb (yes/no): yes
+Authorize service
+[NEW] Endpoint /org/bluez/hci0/dev_90_81_58_9D_84_E0/sep1 
+[NEW] Endpoint /org/bluez/hci0/dev_90_81_58_9D_84_E0/sep2 
+[NEW] Endpoint /org/bluez/hci0/dev_90_81_58_9D_84_E0/sep3 
+[NEW] Endpoint /org/bluez/hci0/dev_90_81_58_9D_84_E0/sep4 
+[NEW] Endpoint /org/bluez/hci0/dev_90_81_58_9D_84_E0/sep5 
+[NEW] Endpoint /org/bluez/hci0/dev_90_81_58_9D_84_E0/sep6 
+[NEW] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 [default]
+[NEW] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/Filesystem /Filesystem
+[NEW] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/NowPlaying /NowPlaying
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Type: Audio
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Subtype: None
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Status: stopped
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Browsable: yes
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Searchable: yes
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Playlist: /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/NowPlaying
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Name: Musique
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Playlist: /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/NowPlaying
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Repeat: off
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Shuffle: off
+[NEW] Folder /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Duration: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Genre: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Title: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Item: /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/NowPlaying/item18446744073709551615
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.TrackNumber: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Artist: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.NumberOfTracks: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Album: 
+[NEW] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/NowPlaying/item18446744073709551615 <unknown>
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Duration: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Genre: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Title: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Item: /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/NowPlaying/item18446744073709551615
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.TrackNumber: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Artist: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.NumberOfTracks: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Track.Album: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Position: 0x00000000 (0)
+[agent] Authorize service 0000111e-0000-1000-8000-00805f9b34fb (yes/no): yes
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 State: pending
+transport endpoint not found
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x005d (93)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 State: active
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Delay: 0x0382 (898)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Delay: 0x044a (1098)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 Status: playing
+[NEW] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 
+[DEL] Folder /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0
+[DEL] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0 [default]
+[DEL] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/NowPlaying/item18446744073709551615 <unknown>
+[DEL] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/NowPlaying /NowPlaying
+[DEL] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player0/Filesystem /Filesystem
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Type: Audio
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Subtype: None
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Status: playing
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Name: Lecteur multimédia inconnu
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Track.Title: L'algorithme qui détermine si t'es BG (ou pas 😬)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Track.Duration: 0x000a19b5 (661941)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Track.Album: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Track.Artist: overfl0w — par V2F
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Position: 0x00001c7e (7294)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Position: 0x00001c99 (7321)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Delay: 0x0512 (1298)
+[Unice-HotSpot2]> pause
+Invalid command in menu main: pause
+
+Use "help" for a list of available commands in a menu.
+Use "menu <submenu>" if you want to enter any submenu.
+Use "back" if you want to return to menu main.
+[Unice-HotSpot2]> menu player
+Menu player:
+Available commands:
+-------------------
+list                                              List available players
+show [player]                                     Player information
+select <player>                                   Select default player
+play [item]                                       Start playback
+pause                                             Pause playback
+stop                                              Stop playback
+next                                              Jump to next item
+previous                                          Jump to previous item
+fast-forward                                      Fast forward playback
+rewind                                            Rewind playback
+equalizer <on/off>                                Enable/Disable equalizer
+repeat <singletrack/alltrack/group/off>           Set repeat mode
+shuffle <alltracks/group/off>                     Set shuffle mode
+scan <alltracks/group/off>                        Set scan mode
+change-folder <item>                              Change current folder
+list-items [start] [end]                          List items of current folder
+search <string>                                   Search items containing string
+queue <item>                                      Add item to playlist queue
+show-item <item>                                  Show item information
+back                                              Return to main menu
+version                                           Display version
+quit                                              Quit program
+exit                                              Quit program
+help                                              Display help about this program
+export                                            Print environment variables
+script <filename>                                 Run script
+[Unice-HotSpot2]> pause
+No default player available
+[Unice-HotSpot2]> list
+Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 
+[Unice-HotSpot2]> select /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2
+Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 [default]
+[Unice-HotSpot2]> pause
+Attempting to pause
+Pause successful
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Status: paused
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Position: 0x0000a6a4 (42660)
+[NEW] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 
+[DEL] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 [default]
+[NEW] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1/Filesystem /Filesystem
+[NEW] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1/NowPlaying /NowPlaying
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Type: Audio
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Subtype: None
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Status: stopped
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Browsable: yes
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Searchable: yes
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Playlist: /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1/NowPlaying
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Name: Musique
+[NEW] Folder /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Duration: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Genre: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Title: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Item: /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1/NowPlaying/item18446744073709551615
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.TrackNumber: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Artist: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.NumberOfTracks: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Album: 
+[NEW] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1/NowPlaying/item18446744073709551615 <unknown>
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Duration: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Genre: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Title: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Item: /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1/NowPlaying/item18446744073709551615
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.TrackNumber: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Artist: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.NumberOfTracks: 0x00000000 (0)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Track.Album: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Position: 0x00000000 (0)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 State: idle
+[Unice-HotSpot2]> show
+No default player available
+[Unice-HotSpot2]> list
+Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 State: pending
+transport endpoint not found
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 State: active
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Delay: 0x0382 (898)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 Status: playing
+[DEL] Folder /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1
+[DEL] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1 
+[DEL] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1/NowPlaying/item18446744073709551615 <unknown>
+[DEL] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1/NowPlaying /NowPlaying
+[DEL] Item /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player1/Filesystem /Filesystem
+[NEW] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 [default]
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Track.Title: L'algorithme qui détermine si t'es BG (ou pas 😬)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Track.Duration: 0x000a19b5 (661941)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Track.Album: 
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Track.Artist: overfl0w — par V2F
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Position: 0x0000a767 (42855)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Position: 0x0000a791 (42897)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Delay: 0x044a (1098)
+[Unice-HotSpot2]> list
+Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 [default]
+[Unice-HotSpot2]> pause
+Attempting to pause
+Pause successful
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Status: paused
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Position: 0x0000d827 (55335)
+[Unice-HotSpot2]> play
+Attempting to play 
+Play successful
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Status: playing
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Position: 0x0000d87f (55423)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0065 (101)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x005d (93)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0065 (101)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x006d (109)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0065 (101)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x005d (93)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0055 (85)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x004d (77)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0045 (69)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x003d (61)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0035 (53)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x002e (46)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0026 (38)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x001e (30)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0016 (22)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x000e (14)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0006 (6)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0000 (0)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0007 (7)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x000f (15)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0017 (23)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x001f (31)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0027 (39)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x002f (47)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0037 (55)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x003f (63)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x0047 (71)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Volume: 0x004f (79)
+[CHG] Transport /org/bluez/hci0/dev_90_81_58_9D_84_E0/fd0 Delay: 0x0512 (1298)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Status: paused
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Position: 0x00013add (80605)
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Status: playing
+[CHG] Player /org/bluez/hci0/dev_90_81_58_9D_84_E0/avrcp/player2 Position: 0x00013b0b (80651)
