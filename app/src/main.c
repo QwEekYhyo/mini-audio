@@ -98,6 +98,14 @@ static void activate(GtkApplication *app, gpointer user_data)
     gtk_window_set_title(GTK_WINDOW(window), "Mon Bébé Audio");
     gtk_window_set_default_size(GTK_WINDOW(window), 1280, 720);
 
+#if defined(DEBUG)
+    webkit_settings_set_enable_developer_extras(settings, TRUE);
+
+    webkit_web_view_set_settings(WEBKIT_WEB_VIEW(webview), settings);
+
+    // Use Vite debug server in debug config
+    webkit_web_view_load_uri(WEBKIT_WEB_VIEW(webview), "http://localhost:5173");
+#else
     webkit_web_context_register_uri_scheme(context,
                                            "app",
                                            uri_scheme_request_cb,
@@ -109,12 +117,9 @@ static void activate(GtkApplication *app, gpointer user_data)
     webkit_security_manager_register_uri_scheme_as_cors_enabled(security,
                                                                 "app");
 
-    webkit_settings_set_enable_developer_extras(settings, TRUE);
-
-    webkit_web_view_set_settings(WEBKIT_WEB_VIEW(webview), settings);
-
     webkit_web_view_load_uri(WEBKIT_WEB_VIEW(webview),
                              "app://localhost/index.html");
+#endif
 
     gtk_window_set_child(GTK_WINDOW(window), webview);
 
