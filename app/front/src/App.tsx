@@ -1,11 +1,21 @@
 import { useState } from "react";
+
+import {} from "../utils/native-bridge";
+
 import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
+
 import "./App.css";
 
 function App() {
     const [count, setCount] = useState(0);
+
+    const onClick = () => {
+        window.native.send("test", { count });
+
+        setCount((count) => count + 1);
+    };
 
     return (
         <>
@@ -32,11 +42,7 @@ function App() {
                         <code>HMR</code>
                     </p>
                 </div>
-                <button
-                    type="button"
-                    className="counter"
-                    onClick={() => setCount((count) => count + 1)}
-                >
+                <button type="button" className="counter" onClick={onClick}>
                     Count is {count}
                 </button>
             </section>
