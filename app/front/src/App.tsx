@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import {} from "./utils/native-bridge";
+import { onNativeMessage } from "./utils/native-bridge";
 
 import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
@@ -16,6 +16,16 @@ function App() {
 
         setCount((count) => count + 1);
     };
+
+    useEffect(() => {
+        const unsubscribe = onNativeMessage((message) => {
+            if (message.event === "alert") {
+                alert("The Native Code is angry");
+            }
+        });
+
+        return unsubscribe;
+    }, []);
 
     return (
         <>

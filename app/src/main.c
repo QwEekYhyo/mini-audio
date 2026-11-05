@@ -1,4 +1,5 @@
 #include <bridge.h>
+#include <glib.h>
 #include <gtk/gtk.h>
 #include <webkit/webkit.h>
 
@@ -80,26 +81,37 @@ static void uri_scheme_request_cb(WebKitURISchemeRequest *request,
     g_bytes_unref(bytes);
 }
 
+static gboolean periodic_javascript_invocation(gpointer user_data)
+{
+    const gchar message_detail[] = "{\"event\": \"alert\"}";
+
+    bridge_send(WEBKIT_WEB_VIEW(user_data), message_detail);
+
+    return G_SOURCE_CONTINUE;
+}
+
 static void activate(GtkApplication *app, gpointer user_data)
 {
-    GtkWidget             *window;
+    GtkWindow             *window;
     WebKitWebView         *web_view;
     WebKitWebContext      *context;
     WebKitSecurityManager *security;
     WebKitSettings        *settings;
 
-    window   = gtk_application_window_new(app);
+    window   = GTK_WINDOW(gtk_application_window_new(app));
+    settings = webkit_settings_new();
     context  = webkit_web_context_new();
     security = webkit_web_context_get_security_manager(context);
-    settings = webkit_settings_new();
     web_view = WEBKIT_WEB_VIEW(
         g_object_new(WEBKIT_TYPE_WEB_VIEW, "web-context", context, NULL)
     );
 
-    gtk_window_set_title(GTK_WINDOW(window), "Mon Bébé Audio");
-    gtk_window_set_default_size(GTK_WINDOW(window), 1280, 720);
+    gtk_window_set_title(window, "Mon Bébé Audio");
+    gtk_window_set_default_size(window, 1280, 720);
 
     bridge_init(web_view);
+
+    g_timeout_add(2500, periodic_javascript_invocation, (gpointer)web_view);
 
 #if defined(DEBUG)
     webkit_settings_set_enable_developer_extras(settings, TRUE);
@@ -123,9 +135,9 @@ static void activate(GtkApplication *app, gpointer user_data)
     webkit_web_view_load_uri(web_view, "app://localhost/index.html");
 #endif
 
-    gtk_window_set_child(GTK_WINDOW(window), GTK_WIDGET(web_view));
+    gtk_window_set_child(window, GTK_WIDGET(web_view));
 
-    gtk_window_present(GTK_WINDOW(window));
+    gtk_window_present(window);
 
     g_object_unref(context);
     g_object_unref(settings);
@@ -144,5 +156,5 @@ int main(int argc, char **argv)
 
     g_object_unref(app);
 
-    return 0;
+    return status;
 }

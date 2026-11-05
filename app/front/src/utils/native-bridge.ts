@@ -1,3 +1,8 @@
+type NativeMessage = {
+    event: string;
+    payload?: any;
+};
+
 type NativeBridge = {
     send(command: string, payload?: any): void;
 };
@@ -25,4 +30,13 @@ window.native = {
     },
 };
 
-export {};
+export function onNativeMessage(callback: (message: NativeMessage) => void) {
+    const handler = (event: Event) => {
+        const customEvent = event as CustomEvent<NativeMessage>;
+        callback(customEvent.detail);
+    };
+
+    window.addEventListener("native-message", handler);
+
+    return () => window.removeEventListener("native-message", handler);
+}

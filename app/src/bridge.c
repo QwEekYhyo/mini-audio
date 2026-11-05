@@ -1,4 +1,5 @@
 #include <bridge.h>
+#include <glib.h>
 #include <gtk/gtk.h>
 #include <jsc/jsc.h>
 #include <webkit/WebKitUserContentManager.h>
@@ -39,4 +40,24 @@ void bridge_init(WebKitWebView *web_view)
                                                                 NULL);
 }
 
-void bridge_send(WebKitWebView *web_view, const gchar *json) {}
+void bridge_send(WebKitWebView *web_view, const gchar *json)
+{
+    gchar *js_script;
+
+    js_script = g_strdup_printf(
+        "window.dispatchEvent(new CustomEvent(\"native-message\","
+        "{detail: %s}));",
+        json
+    );
+
+    webkit_web_view_evaluate_javascript(web_view,
+                                        js_script,
+                                        -1,
+                                        NULL,
+                                        NULL,
+                                        NULL,
+                                        NULL,
+                                        NULL);
+
+    g_free(js_script);
+}
