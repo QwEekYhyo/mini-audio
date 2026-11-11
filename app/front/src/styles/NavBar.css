@@ -1,0 +1,8 @@
+.nav-container {
+    width: 100%;
+    height: var(--navbar-size);
+    border-radius: var(--radius);
+
+    background: var(--primary-bg);
+    margin-bottom: var(--gap-size);
+}

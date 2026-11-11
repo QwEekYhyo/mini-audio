@@ -15,3 +15,13 @@ Secondary objectives:
 - Somehow connect the SBC to the internet.
 - Control the music app using the SBC (skip music, pause, lower/increase volume, shuffle).
 - Taking phone calls: HFP (Bluetooth profile)
+
+Colors:
+- Hot Pink: #FF69B4
+- Dark Coffee: #3D2B1F
+- Sunflower Gold: #F1B42F
+
+Visible hardware components:
+- Screen
+- Power switch
+- LED strip (+ a switch or something to cut its power)

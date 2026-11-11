@@ -1,50 +1,55 @@
 :root {
-  /* Hot Pink */
-  --pink-50: #FFF0F6;
-  --pink-100: #FFD6E7;
-  --pink-200: #FFADD1;
-  --pink-300: #FF85BE;
-  --pink-400: #FF69B4; /* main */
-  --pink-500: #E94B9B;
-  --pink-600: #C92E7C;
-  --pink-700: #922057;
-  --pink-main: var(--pink-400);
+    /* Hot Pink */
+    --pink-50: #fff0f6;
+    --pink-100: #ffd6e7;
+    --pink-200: #ffadd1;
+    --pink-300: #ff85be;
+    --pink-400: #ff69b4; /* main */
+    --pink-500: #e94b9b;
+    --pink-600: #c92e7c;
+    --pink-700: #922057;
+    --pink-main: var(--pink-400);
 
-  /* Dark Coffee */
-  --coffee-50: #F7F3F0;
-  --coffee-100: #E8DED7;
-  --coffee-200: #CDBCB0;
-  --coffee-300: #A58D7D;
-  --coffee-400: #795C4B;
-  --coffee-500: #5A4031;
-  --coffee-600: #3D2B1F; /* main */
-  --coffee-700: #291C15;
-  --coffee-800: #1B120E;
-  --coffee-main: var(--coffee-600);
+    /* Dark Coffee */
+    --coffee-50: #f7f3f0;
+    --coffee-100: #e8ded7;
+    --coffee-200: #cdbcb0;
+    --coffee-300: #a58d7d;
+    --coffee-400: #795c4b;
+    --coffee-500: #5a4031;
+    --coffee-600: #3d2b1f; /* main */
+    --coffee-700: #291c15;
+    --coffee-800: #1b120e;
+    --coffee-main: var(--coffee-600);
 
-  /* Sunflower Gold */
-  --gold-50: #FFF8E6;
-  --gold-100: #FCEBC0;
-  --gold-200: #F8D98A;
-  --gold-300: #F1B42F; /* main */
-  --gold-400: #D99A19;
-  --gold-500: #AA7411;
-  --gold-600: #79520D;
-  --gold-main: var(--gold-300);
+    /* Sunflower Gold */
+    --gold-50: #fff8e6;
+    --gold-100: #fcebc0;
+    --gold-200: #f8d98a;
+    --gold-300: #f1b42f; /* main */
+    --gold-400: #d99a19;
+    --gold-500: #aa7411;
+    --gold-600: #79520d;
+    --gold-main: var(--gold-300);
 
     --text: var(--coffee-50);
     --text-h: #fff;
     --text-accent: var(--pink-main);
-    --bg: var(--coffee-main);
+    --bg: var(--coffee-800);
+    --primary-bg: var(--coffee-700);
     --border: transparent;
     --accent: var(--pink-main);
-    --accent-bg: var(--coffee-200);
+    --accent-bg: var(--coffee-main);
     --accent-border: var(--pink-main);
     --subtle: var(--gold-main);
 
     --sans: system-ui, "Segoe UI", Roboto, sans-serif;
     --heading: system-ui, "Segoe UI", Roboto, sans-serif;
     --mono: ui-monospace, Consolas, monospace;
+
+    --navbar-size: 100px;
+    --gap-size: 20px;
+    --radius: 18px;
 
     font: 18px/145% var(--sans);
     letter-spacing: 0.18px;
@@ -64,6 +69,7 @@ h1,
 h2 {
     font-family: var(--heading);
     font-weight: 500;
+    margin: 0;
 }
 
 p {
