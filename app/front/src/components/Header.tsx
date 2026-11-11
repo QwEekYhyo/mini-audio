@@ -13,4 +13,4 @@ function Header({ title }: HeaderProps) {
     );
 }
 
-export { Header as default, type HeaderProps };
+export default Header;

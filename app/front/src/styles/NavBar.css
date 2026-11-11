@@ -1,8 +1,43 @@
 .nav-container {
-    width: 100%;
-    height: var(--navbar-size);
-    border-radius: var(--radius);
+    --container-padding: var(--gap-size);
 
-    background: var(--primary-bg);
+    /* I don't like the solution below but I have no other idea rn */
+    width: calc(100% - 2 * var(--container-padding)) !important;
+    height: var(--navbar-size);
     margin-bottom: var(--gap-size);
+    padding: var(--container-padding);
+
+    display: flex;
+    gap: var(--gap-size);
+}
+
+.nav-btn {
+    height: 100%;
+    border-radius: var(--radius);
+    flex-grow: 1;
+
+    user-select: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    transition:
+        background 100ms ease-in-out,
+        color 100ms ease-in-out;
+}
+.nav-btn:hover {
+    cursor: pointer;
+}
+
+.nav-btn svg {
+    height: 40px;
+    width: 40px;
+}
+
+.nav-btn-selected {
+    background: var(--accent-bg);
+    color: var(--pink-main);
 }

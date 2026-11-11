@@ -1,5 +1,4 @@
 .header-container {
-    width: 100%;
     padding: var(--gap-size) 0;
 
     display: flex;
