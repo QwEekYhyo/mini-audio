@@ -1,0 +1,27 @@
+.widget {
+    background: var(--primary-bg);
+    border-radius: var(--radius);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.round-btn {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    border: none;
+    height: 60px;
+
+    color: var(--text-h);
+    background: transparent;
+    transition: background 100ms ease-in-out;
+
+    position: relative;
+}
+.round-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+.round-btn:active {
+    background: rgba(0, 0, 0, 0.2);
+}

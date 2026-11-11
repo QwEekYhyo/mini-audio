@@ -17,7 +17,10 @@ function WorkInProgressPage() {
             <TrafficCone
                 style={{ height: 160, width: 160, color: "var(--pink-main)" }}
             />
-            <h1>Page en construction</h1>
+            <h1>
+                Page en{" "}
+                <span style={{ color: "var(--subtle)" }}>construction</span>
+            </h1>
         </div>
     );
 }

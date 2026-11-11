@@ -1,0 +1,28 @@
+.music-page-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: var(--gap-size);
+}
+
+.music-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-controls .main-btn {
+    background: var(--accent);
+    color: var(--primary-bg);
+}
+.music-controls .main-btn:hover {
+    /* hard coded pink = bad */
+    background: var(--pink-300);
+}
+.music-controls .main-btn:active {
+    /* hard coded pink = bad */
+    background: var(--pink-500);
+}

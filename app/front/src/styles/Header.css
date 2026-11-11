@@ -1,5 +1,5 @@
 .header-container {
-    padding: var(--gap-size) 0;
+    padding-top: var(--gap-size);
 
     display: flex;
     justify-content: space-between;

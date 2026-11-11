@@ -1,4 +1,6 @@
-import TrafficCone from "../assets/traffic-cone.svg?react";
+import MusicNote from "../assets/music-note.svg?react";
+import LightBulb from "../assets/light-bulb.svg?react";
+import SettingsIcon from "../assets/settings.svg?react";
 
 import "../styles/NavBar.css";
 
@@ -15,11 +17,12 @@ function NavBar({ currentPage, onPageChange }: NavBarProps) {
     return (
         <nav className="nav-container widget">
             {PAGE_INDICES.map((page) => (
+                // TODO: change those divs to buttons
                 <div
                     className={`nav-btn${page === currentPage ? " nav-btn-selected" : ""}`}
                     onClick={() => onPageChange(page)}
                 >
-                    <TrafficCone />
+                    {getPageNavIcon(page)}
                     <span>{getPageNavTitle(page)}</span>
                 </div>
             ))}
@@ -36,6 +39,17 @@ const getPageTitle = (page: PageIndex): string => {
             return "MaBébéLighting";
         case 2:
             return "MaBébéSettings";
+    }
+};
+
+const getPageNavIcon = (page: PageIndex): React.JSX.Element => {
+    switch (page) {
+        case 0:
+            return <MusicNote />;
+        case 1:
+            return <LightBulb />;
+        case 2:
+            return <SettingsIcon />;
     }
 };
 
