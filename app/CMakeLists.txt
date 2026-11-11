@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(MonBebeAudio
+project(MaBebeAudio
     VERSION 0.1.0
     LANGUAGES C
 )

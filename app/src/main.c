@@ -3,7 +3,7 @@
 #include <gtk/gtk.h>
 #include <webkit/webkit.h>
 
-#define RESOURCE_PREFIX "/com/monbebe/audio"
+#define RESOURCE_PREFIX "/com/mabebe/audio"
 
 static const char *get_mime_type(const char *path)
 {
@@ -106,7 +106,7 @@ static void activate(GtkApplication *app, gpointer user_data)
         g_object_new(WEBKIT_TYPE_WEB_VIEW, "web-context", context, NULL)
     );
 
-    gtk_window_set_title(window, "Mon Bébé Audio");
+    gtk_window_set_title(window, "Ma Bébé Audio");
     gtk_window_set_default_size(window, 1280, 720);
 
     bridge_init(web_view);
@@ -148,7 +148,7 @@ int main(int argc, char **argv)
     GtkApplication *app;
     int             status;
 
-    app = gtk_application_new("com.monbebe.audio", G_APPLICATION_DEFAULT_FLAGS);
+    app = gtk_application_new("com.mabebe.audio", G_APPLICATION_DEFAULT_FLAGS);
 
     g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
 

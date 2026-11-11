@@ -31,11 +31,11 @@ function NavBar({ currentPage, onPageChange }: NavBarProps) {
 const getPageTitle = (page: PageIndex): string => {
     switch (page) {
         case 0:
-            return "MonBébéAudio";
+            return "MaBébéAudio";
         case 1:
-            return "MonBébéLighting";
+            return "MaBébéLighting";
         case 2:
-            return "MonBébéSettings";
+            return "MaBébéSettings";
     }
 };
 

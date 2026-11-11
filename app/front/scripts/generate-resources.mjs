@@ -4,7 +4,7 @@ import path from "node:path";
 const distDir = path.resolve("dist");
 const outputFile = path.resolve("../resources.gresource.xml");
 
-const resourcePrefix = "/com/monbebe/audio";
+const resourcePrefix = "/com/mabebe/audio";
 
 function escapeXml(value) {
     return value
