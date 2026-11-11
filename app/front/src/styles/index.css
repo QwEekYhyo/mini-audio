@@ -1,0 +1,71 @@
+:root {
+  /* Hot Pink */
+  --pink-50: #FFF0F6;
+  --pink-100: #FFD6E7;
+  --pink-200: #FFADD1;
+  --pink-300: #FF85BE;
+  --pink-400: #FF69B4; /* main */
+  --pink-500: #E94B9B;
+  --pink-600: #C92E7C;
+  --pink-700: #922057;
+  --pink-main: var(--pink-400);
+
+  /* Dark Coffee */
+  --coffee-50: #F7F3F0;
+  --coffee-100: #E8DED7;
+  --coffee-200: #CDBCB0;
+  --coffee-300: #A58D7D;
+  --coffee-400: #795C4B;
+  --coffee-500: #5A4031;
+  --coffee-600: #3D2B1F; /* main */
+  --coffee-700: #291C15;
+  --coffee-800: #1B120E;
+  --coffee-main: var(--coffee-600);
+
+  /* Sunflower Gold */
+  --gold-50: #FFF8E6;
+  --gold-100: #FCEBC0;
+  --gold-200: #F8D98A;
+  --gold-300: #F1B42F; /* main */
+  --gold-400: #D99A19;
+  --gold-500: #AA7411;
+  --gold-600: #79520D;
+  --gold-main: var(--gold-300);
+
+    --text: var(--coffee-50);
+    --text-h: #fff;
+    --text-accent: var(--pink-main);
+    --bg: var(--coffee-main);
+    --border: transparent;
+    --accent: var(--pink-main);
+    --accent-bg: var(--coffee-200);
+    --accent-border: var(--pink-main);
+    --subtle: var(--gold-main);
+
+    --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+    --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, Consolas, monospace;
+
+    font: 18px/145% var(--sans);
+    letter-spacing: 0.18px;
+    color: var(--text);
+    background: var(--bg);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-family: var(--heading);
+    font-weight: 500;
+}
+
+p {
+    margin: 0;
+}
