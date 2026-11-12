@@ -12,6 +12,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--gap-size);
+}
+
+.music-controls button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.music-controls button > * {
+    height: 65%;
+    width: 65%;
 }
 
 .music-controls .main-btn {
@@ -25,4 +36,18 @@
 .music-controls .main-btn:active {
     /* hard coded pink = bad */
     background: var(--pink-500);
+}
+
+.music-controls .secondary-btn {
+    background: transparent;
+    color: #fff;
+    height: 50px;
+}
+.music-controls .secondary-btn:hover {
+    /* hard coded brown = bad */
+    background: rgb(from var(--coffee-200) r g b / 5%);
+}
+.music-controls .secondary-btn:active {
+    /* hard coded brown = bad */
+    background: rgb(from var(--coffee-200) r g b / 10%);
 }
