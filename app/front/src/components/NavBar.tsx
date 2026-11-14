@@ -21,6 +21,7 @@ function NavBar({ currentPage, onPageChange }: NavBarProps) {
                 <div
                     className={`nav-btn${page === currentPage ? " nav-btn-selected" : ""}`}
                     onClick={() => onPageChange(page)}
+                    key={page}
                 >
                     {getPageNavIcon(page)}
                     <span>{getPageNavTitle(page)}</span>

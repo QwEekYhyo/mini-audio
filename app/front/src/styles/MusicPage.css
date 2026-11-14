@@ -1,5 +1,7 @@
 .music-page-container {
-    width: 100%;
+    --music-page-container-padding: var(--gap-size);
+    padding: 0 var(--music-page-container-padding);
+    width: calc(100% - 2 * var(--music-page-container-padding));
     height: 100%;
 
     display: flex;

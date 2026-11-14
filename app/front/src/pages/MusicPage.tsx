@@ -1,3 +1,5 @@
+import Slider from "../components/Slider";
+
 import PauseIcon from "../assets/music-pause.svg?react";
 import NextIcon from "../assets/music-next.svg?react";
 import ShuffleIcon from "../assets/music-shuffle.svg?react";
@@ -9,7 +11,17 @@ function MusicPage() {
     return (
         <div className="widget music-page-container">
             <div className="audio-visualizer"></div>
-            <div className="track-info"></div>
+
+            <div className="track-info">
+                <Slider
+                    min={100}
+                    max={200}
+                    value={101}
+                    onValueChange={() => {}}
+                    style={{ height: 8, width: "100%" }}
+                />
+            </div>
+
             <div className="music-controls">
                 <button
                     className="round-btn secondary-btn"

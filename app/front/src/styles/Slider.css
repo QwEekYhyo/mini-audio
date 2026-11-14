@@ -1,0 +1,16 @@
+.slider-container {
+    background: var(--accent-bg);
+    border-radius: 999px;
+}
+.slider-container:hover {
+    cursor: pointer;
+}
+
+.slider-inside {
+    height: 100%;
+
+    background: var(--accent);
+    border-radius: inherit;
+
+    transition: width 100ms ease-in-out;
+}
