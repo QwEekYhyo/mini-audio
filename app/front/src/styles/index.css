@@ -33,6 +33,8 @@
     --gold-main: var(--gold-300);
 
     --text: var(--coffee-50);
+    --text-sub: rgb(from var(--text) r g b / 60%);
+    --text-sub-sub: rgb(from var(--text) r g b / 40%);
     --text-h: #fff;
     --text-accent: var(--pink-main);
     --bg: var(--coffee-800);

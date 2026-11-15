@@ -16,7 +16,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--gap-size);
+    gap: 10px;
+}
+
+.track-position {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-sub);
 }
 
 /************** End of Track Info **************/

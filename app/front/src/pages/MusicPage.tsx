@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { formatSeconds } from "../utils/time";
 import Slider from "../components/Slider";
 
 import PauseIcon from "../assets/music-pause.svg?react";
@@ -13,21 +14,26 @@ function MusicPage() {
     // In seconds
     const [trackPosition, setTrackPosition] = useState(0);
 
+    const trackDuration = 190;
+
     return (
         <div className="widget music-page-container">
             <div className="audio-visualizer"></div>
 
             <div className="track-info">
                 <Slider
-                    min={24}
-                    max={191}
+                    min={0}
+                    max={trackDuration}
                     value={trackPosition}
                     onValueChange={(value) =>
                         setTrackPosition(Math.floor(value))
                     }
                     style={{ height: 8, width: "100%" }}
                 />
-                <span>{trackPosition}</span>
+                <div className="track-position">
+                    <span>{formatSeconds(trackPosition)}</span>
+                    <span>-{formatSeconds(trackDuration - trackPosition)}</span>
+                </div>
             </div>
 
             <div className="music-controls">
