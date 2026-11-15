@@ -1,0 +1,27 @@
+.audio-viz-container {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-size);
+}
+
+.audio-viz-nothing-img {
+    aspect-ratio: 1;
+    width: 140px;
+    border-radius: 999px;
+    border: solid 4px var(--accent);
+    color: var(--accent);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-viz-nothing-img svg {
+    width: 80%;
+    height: 80%;
+}

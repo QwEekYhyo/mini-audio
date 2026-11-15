@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-import { formatSeconds } from "../utils/time";
+import AudioVisualizer from "../components/AudioVisualizer";
 import Slider from "../components/Slider";
+import { formatSeconds } from "../utils/time";
 
 import MusicDisc from "../assets/music-disc.svg?react";
 import NextIcon from "../assets/music-next.svg?react";
@@ -39,7 +40,7 @@ function MusicPage() {
 
     return (
         <div className="widget music-page-container">
-            <div className="audio-visualizer"></div>
+            <AudioVisualizer />
 
             <div className="track-info">
                 <div className="track-metadata">
