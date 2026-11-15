@@ -19,6 +19,37 @@
     gap: 10px;
 }
 
+.track-metadata {
+    align-self: flex-start;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.track-img {
+    width: 100px;
+    aspect-ratio: 1;
+    background: linear-gradient(-45deg, #ff0080, #7928ca, #00d4ff, #00ff87);
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.track-texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.track-texts *:nth-child(2) {
+    color: var(--text-sub);
+}
+.track-texts *:nth-child(3) {
+    color: var(--text-sub-sub);
+}
+
 .track-position {
     width: 100%;
     display: flex;
