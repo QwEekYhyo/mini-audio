@@ -29,15 +29,41 @@ const fractionToValue = (value: number, min: number, max: number): number => {
 
 function Slider({ min, max, value, onValueChange, style }: SliderProps) {
     const [currentWidth, setCurrentWidth] = useState<string | number>(0);
+    const [isBeingDragged, setIsBeingDragged] = useState(false);
 
     useEffect(() => {
         setCurrentWidth(`${valueToFraction(value, min, max) * 100}%`);
     }, [value]);
 
-    const handleSliderClick: React.MouseEventHandler<HTMLDivElement> = (
+    const handlePointerDown: React.PointerEventHandler<HTMLDivElement> = (
         event,
     ) => {
-        event.preventDefault();
+        // TODO: test if this works with touches or not
+        if (event.button !== 0) return;
+
+        event.currentTarget.setPointerCapture(event.pointerId);
+
+        setIsBeingDragged(true);
+
+        const widthClicked = event.clientX - event.currentTarget.offsetLeft;
+        setCurrentWidth(widthClicked);
+    };
+
+    const handlePointerMove: React.PointerEventHandler<HTMLDivElement> = (
+        event,
+    ) => {
+        if (!isBeingDragged) return;
+
+        const widthClicked = event.clientX - event.currentTarget.offsetLeft;
+        setCurrentWidth(widthClicked);
+    };
+
+    const handlePointerUp: React.PointerEventHandler<HTMLDivElement> = (
+        event,
+    ) => {
+        if (!isBeingDragged) return;
+
+        setIsBeingDragged(false);
 
         const widthClicked = event.clientX - event.currentTarget.offsetLeft;
 
@@ -54,11 +80,14 @@ function Slider({ min, max, value, onValueChange, style }: SliderProps) {
 
     return (
         <div
-            className="slider-container"
+            className={`slider-container${isBeingDragged ? " dragged" : ""}`}
             style={style}
             tabIndex={0}
             role="button"
-            onClick={handleSliderClick}
+            onPointerDown={handlePointerDown}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
+            onPointerMove={handlePointerMove}
         >
             <div
                 className="slider-inside"
