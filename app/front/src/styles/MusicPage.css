@@ -10,6 +10,19 @@
     gap: var(--gap-size);
 }
 
+/************** Start of Track Info **************/
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-size);
+}
+
+/************** End of Track Info **************/
+
+/************** Start of Music Controls **************/
+
 .music-controls {
     display: flex;
     align-items: center;
@@ -53,3 +66,5 @@
     /* hard coded brown = bad */
     background: rgb(from var(--coffee-200) r g b / 10%);
 }
+
+/************** End of Music Controls **************/

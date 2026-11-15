@@ -6,7 +6,9 @@ type SliderProps = {
     min: number;
     max: number;
     value: number;
+    // TODO: add a "disabled" field
     onValueChange: (value: number) => void;
+    // TODO: add a "onSliderRelease" or something
     style?: React.CSSProperties;
 };
 
@@ -14,6 +16,7 @@ const clamp = (value: number, min: number, max: number): number => {
     return value > max ? max : value < min ? min : value;
 };
 
+// The two linear interpolation sort of functions below are horrendously named
 const valueToFraction = (value: number, min: number, max: number): number => {
     value -= min;
     max -= min;
@@ -32,8 +35,43 @@ function Slider({ min, max, value, onValueChange, style }: SliderProps) {
     const [isBeingDragged, setIsBeingDragged] = useState(false);
 
     useEffect(() => {
+        // If the slider is being dragged we don't want a value change to conflict with the drag
+        // User drag has precedence over computational value changes
+        if (isBeingDragged) return;
+
         setCurrentWidth(`${valueToFraction(value, min, max) * 100}%`);
     }, [value]);
+
+    // Maybe change all the generics below to something more generic that HTMLDivElement?
+
+    /**
+     * Update the width of the slider's inside and change the underlying value
+     * from a PointerEvent fired as the slider is being dragged.
+     *
+     * @param event - PointerEvent used to get where the slider is being clicked / dragged
+     */
+    const updateWidthAndValueFromEvent = (
+        event: React.PointerEvent<HTMLDivElement>,
+    ) => {
+        // Clamp width to avoid slider going out of it's container on the right
+        // and trying to set a negative CSS width (which doesn't work)
+        let widthClicked = clamp(
+            event.clientX - event.currentTarget.offsetLeft,
+            0,
+            event.currentTarget.clientWidth,
+        );
+
+        setCurrentWidth(widthClicked);
+
+        // Notify a value change
+        onValueChange(
+            fractionToValue(
+                widthClicked / event.currentTarget.clientWidth,
+                min,
+                max,
+            ),
+        );
+    };
 
     const handlePointerDown: React.PointerEventHandler<HTMLDivElement> = (
         event,
@@ -41,12 +79,13 @@ function Slider({ min, max, value, onValueChange, style }: SliderProps) {
         // TODO: test if this works with touches or not
         if (event.button !== 0) return;
 
+        // Make it so that the currentTarget continues to receive pointer events with the matching pointerId
+        // even when they occur out of it's bounding box
         event.currentTarget.setPointerCapture(event.pointerId);
 
         setIsBeingDragged(true);
 
-        const widthClicked = event.clientX - event.currentTarget.offsetLeft;
-        setCurrentWidth(widthClicked);
+        updateWidthAndValueFromEvent(event);
     };
 
     const handlePointerMove: React.PointerEventHandler<HTMLDivElement> = (
@@ -54,8 +93,7 @@ function Slider({ min, max, value, onValueChange, style }: SliderProps) {
     ) => {
         if (!isBeingDragged) return;
 
-        const widthClicked = event.clientX - event.currentTarget.offsetLeft;
-        setCurrentWidth(widthClicked);
+        updateWidthAndValueFromEvent(event);
     };
 
     const handlePointerUp: React.PointerEventHandler<HTMLDivElement> = (
@@ -65,17 +103,7 @@ function Slider({ min, max, value, onValueChange, style }: SliderProps) {
 
         setIsBeingDragged(false);
 
-        const widthClicked = event.clientX - event.currentTarget.offsetLeft;
-
-        setCurrentWidth(widthClicked);
-
-        onValueChange(
-            fractionToValue(
-                widthClicked / event.currentTarget.clientWidth,
-                min,
-                max,
-            ),
-        );
+        updateWidthAndValueFromEvent(event);
     };
 
     return (
