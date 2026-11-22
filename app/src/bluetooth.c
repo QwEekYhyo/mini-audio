@@ -5,11 +5,6 @@
 
 #define NB_DEVICE 10
 
-#define foreach_device(device)                          \
-    gsize _M_device_index = 0;                          \
-    for (device = devices; _M_device_index < NB_DEVICE; \
-         device++, _M_device_index++)
-
 static GDBusConnection *sys_bus_con = NULL;
 static Device           devices[NB_DEVICE];
 
@@ -183,8 +178,10 @@ Device *get_connected_device(void)
 {
     Device *device;
 
-    foreach_device(device)
+    for (gsize device_i = 0; device_i < NB_DEVICE; device_i++)
     {
+        device = &devices[device_i];
+
         if (device->allocated && device->connected && device->paired)
         {
             return device;
@@ -198,9 +195,10 @@ void debug_devices(void)
 {
     Device *device;
 
-    foreach_device(device)
+    for (gsize device_i = 0; device_i < NB_DEVICE; device_i++)
     {
-        g_print("Device %lu {\n", _M_device_index);
+        device = &devices[device_i];
+        g_print("Device %lu {\n", device_i);
         g_print("  allocated: %d,\n", device->allocated);
 
         if (device->name)
