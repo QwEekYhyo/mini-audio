@@ -17,6 +17,8 @@ typedef struct
 int  bluetooth_init(void);
 void bluetooth_deinit(void);
 
+Device *get_connected_device(void);
+
 void debug_devices(void);
 
 #endif

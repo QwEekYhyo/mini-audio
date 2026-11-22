@@ -5,9 +5,17 @@
 
 #define NB_DEVICE 10
 
+#define foreach_device(device)                          \
+    gsize _M_device_index = 0;                          \
+    for (device = devices; _M_device_index < NB_DEVICE; \
+         device++, _M_device_index++)
+
 static GDBusConnection *sys_bus_con = NULL;
 static Device           devices[NB_DEVICE];
 
+/**
+ * Retrieve the list of devices from Bluez
+ */
 static void get_devices(GObject *src_obj, GAsyncResult *result, gpointer data)
 {
     GDBusConnection *con;
@@ -18,6 +26,7 @@ static void get_devices(GObject *src_obj, GAsyncResult *result, gpointer data)
     const gchar     *object_path;
     GVariant        *ifaces_and_props;
     gsize            device_index;
+    Device          *connected_device;
 
     (void)data;
 
@@ -119,7 +128,7 @@ static void get_devices(GObject *src_obj, GAsyncResult *result, gpointer data)
 
 int bluetooth_init(void)
 {
-    GError *error;
+    GError *error = NULL;
 
     // Doing synchronous calls for now, this could probably be optimized
     sys_bus_con = g_bus_get_sync(G_BUS_TYPE_SYSTEM, NULL, &error);
@@ -170,15 +179,28 @@ void bluetooth_deinit(void)
     }
 }
 
+Device *get_connected_device(void)
+{
+    Device *device;
+
+    foreach_device(device)
+    {
+        if (device->allocated && device->connected && device->paired)
+        {
+            return device;
+        }
+    }
+
+    return NULL;
+}
+
 void debug_devices(void)
 {
     Device *device;
 
-    for (gsize device_i = 0; device_i < NB_DEVICE; device_i++)
+    foreach_device(device)
     {
-        device = &devices[device_i];
-
-        g_print("Device %lu {\n", device_i);
+        g_print("Device %lu {\n", _M_device_index);
         g_print("  allocated: %d,\n", device->allocated);
 
         if (device->name)

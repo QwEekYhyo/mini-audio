@@ -82,6 +82,26 @@ static void uri_scheme_request_cb(WebKitURISchemeRequest *request,
     g_bytes_unref(bytes);
 }
 
+static void signal_front_of_connection_status(gpointer user_data)
+{
+    Device *connected_device;
+    gchar  *json;
+
+    connected_device = get_connected_device();
+
+    if (connected_device)
+    {
+        json = g_strdup_printf("{\"event\":\"connection_status\", "
+                               "\"payload\":{\"status\":\"connected\","
+                               "\"device\":{\"name\":\"%s\"}}}",
+                               connected_device->name);
+
+        bridge_send(WEBKIT_WEB_VIEW(user_data), json);
+
+        g_free(json);
+    }
+}
+
 static gboolean periodic_javascript_invocation(gpointer user_data)
 {
     const gchar message_detail[] = "{\"event\": \"alert\"}";
@@ -113,6 +133,10 @@ static void activate(GtkApplication *app, gpointer user_data)
     bridge_init(web_view);
     bluetooth_init();
 
+    // Delay here is completely arbitrary and this is bad
+    g_timeout_add_once(1000,
+                       signal_front_of_connection_status,
+                       (gpointer)web_view);
     g_timeout_add(2500, periodic_javascript_invocation, (gpointer)web_view);
 
 #if defined(DEBUG)

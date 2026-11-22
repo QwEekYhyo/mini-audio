@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext } from "react";
 
 import BluetoothOn from "../assets/bluetooth-on.svg?react";
 import BluetoothOff from "../assets/bluetooth-off.svg?react";
+import { ConnectionContext } from "../utils/contexts";
 
 const iconStyle: React.CSSProperties = {
     height: "1.3em",
@@ -9,7 +10,7 @@ const iconStyle: React.CSSProperties = {
 };
 
 function ConnectionStatus() {
-    const [connected, setConnected] = useState(false);
+    const connectionInfo = useContext(ConnectionContext);
 
     return (
         <span
@@ -19,12 +20,12 @@ function ConnectionStatus() {
                 gap: 8,
             }}
         >
-            {connected ? (
+            {connectionInfo.connected ? (
                 <BluetoothOn style={iconStyle} />
             ) : (
                 <BluetoothOff style={iconStyle} />
             )}
-            <span>{connected ? "Connecté" : "Déconnecté"}</span>
+            <span>{connectionInfo.connected ? "Connecté" : "Déconnecté"}</span>
         </span>
     );
 }
