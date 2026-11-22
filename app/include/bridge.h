@@ -1,5 +1,5 @@
-#ifndef MONBEBE_BRIDGE_H
-#define MONBEBE_BRIDGE_H
+#ifndef MABEBE_BRIDGE_H
+#define MABEBE_BRIDGE_H
 
 #include <webkit/webkit.h>
 

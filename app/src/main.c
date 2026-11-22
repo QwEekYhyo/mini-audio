@@ -1,3 +1,4 @@
+#include <bluetooth.h>
 #include <bridge.h>
 #include <glib.h>
 #include <gtk/gtk.h>
@@ -110,6 +111,7 @@ static void activate(GtkApplication *app, gpointer user_data)
     gtk_window_set_default_size(window, 1280, 720);
 
     bridge_init(web_view);
+    bluetooth_init();
 
     g_timeout_add(2500, periodic_javascript_invocation, (gpointer)web_view);
 
@@ -153,6 +155,8 @@ int main(int argc, char **argv)
     g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
 
     status = g_application_run(G_APPLICATION(app), argc, argv);
+
+    bluetooth_deinit();
 
     g_object_unref(app);
 
