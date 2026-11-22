@@ -1,3 +1,5 @@
+import ConnectionStatus from "./ConnectionStatus";
+
 import "../styles/Header.css";
 
 type HeaderProps = {
@@ -8,7 +10,7 @@ function Header({ title }: HeaderProps) {
     return (
         <div className="header-container">
             <h1>{title}</h1>
-            <span>Placeholder</span>
+            <ConnectionStatus />
         </div>
     );
 }
